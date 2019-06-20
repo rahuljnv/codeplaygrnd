@@ -17,7 +17,7 @@
 // r   l
 //  a u
 //   h
-//  a h
+//  a u
 // r   l
 // The above is the proper cross manner for the test case,
 // but when printed in a single line it becomes as shown in the output.
@@ -26,21 +26,21 @@
 #include <stdio.h>
 int main()
 {
-    int tt;
-    scanf("%d", &tt);
-    while (tt > 0)
+    int test;
+    scanf("%d", &test);
+    while (test > 0)
     {
-        char str[50];
-        scanf("%s", str);
-        int len = strlen(str), i = 0, j = 0;
-        int x = 0, y = len - 1;
+        char str_v[100];
+        scanf("%s", str_v);
+        int lng = strlen(str_v), i = 0, j = 0;
+        int x = 0, y = lng - 1;
         while (x < y)
         {
-            for (i = 0; i < len; i++)
+            for (i = 0; i < lng; i++)
             {
                 if (i == x || i == y)
                 {
-                    printf("%c", str[i]);
+                    printf("%c", str_v[i]);
                 }
                 else
                 {
@@ -49,42 +49,46 @@ int main()
             }
             x++;
             y--;
-            // printf("\n");
+            
+            printf("\n");
+            
             if (x == y)
             {
-                for (i = 0; i < len; i++)
+                for (i = 0; i < lng; i++)
                 {
                     if (i == x)
                     {
-                        printf("%c", str[i]);
+                        printf("%c", str_v[i]);
                     }
                     else
                     {
                         printf(" ");
                     }
                 }
-                // printf("\n");
+                printf("\n");
             }
         }
+        // 2nd stage
         while (x >= 0)
         {
             x--;
             y++;
-            for (i = 0; i < len; i++)
+            for (i = 0; i < lng; i++)
             {
                 if (i == x || i == y)
                 {
-                    printf("%c", str[i]);
+                    printf("%c", str_v[i]);
                 }
                 else
                 {
                     printf(" ");
                 }
             }
+            printf("\n");
         }
 
-        tt--;
-        printf("\n");
+        test--;
+        //printf("\n");
     }
     return 0;
 }
